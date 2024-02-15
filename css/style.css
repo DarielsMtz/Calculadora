@@ -8,12 +8,185 @@
 
 /* Tipografía */
 @font-face {
-  font-family: "";
-  src: url("") format("woff2"), url("") format("woff");
+  font-family: "Calculator";
+  src: url("../font/calculator.woff2") format("woff2"),
+    url("../font/calculator.woff") format("woff");
 }
 
-/* ******************************** */
+html {
+  font-family: "Calculator", sans-serif;
+  font-size: 16px;
+}
 
-/* Colores */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: url(../svg/Animated\ Shape.svg) no-repeat center center/cover;
+}
 
-/* ******************************** */
+/* Contenedro principal */
+.calculadora {
+  width: 500px;
+  min-width: 300px;
+  height: 500px;
+  min-height: 250px;
+  text-align: center;
+  user-select: none;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1.2fr);
+  grid-template-rows: repeat(6, 1.2fr);
+  grid-auto-flow: row;
+  /* gap: 1px; */
+  grid-template-areas:
+    "resultado resultado resultado resultado"
+    "suma resta multi division"
+    "nº-7 nº-8 nº-9 igual"
+    "nº-4 nº-5 nº-6 igual"
+    "nº-1 nº-2 nº-3 igual"
+    "nº-0 punto AC igual";
+
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* ------- RESULTAD --------- */
+.resultado {
+  grid-area: resultado;
+  background-color: black;
+  color: white;
+  justify-content: flex-end !important;
+  border-radius: 16px 16px 0 0;
+
+  > p {
+    padding: 0 10px;
+    font-size: 2.5rem;
+  }
+}
+
+/* ------- ACCIONES --------- */
+.suma,
+.resta,
+.multi,
+.division {
+  background-color: gray;
+
+  &:hover {
+    background-color: #d3d3d3;
+    cursor: pointer;
+    text-shadow: 1px 1px 10px white;
+  }
+}
+
+/* Suma */
+.suma {
+  grid-area: suma;
+}
+
+/* Resta */
+.resta {
+  grid-area: resta;
+}
+
+/* Multiplicación */
+.multi {
+  grid-area: multi;
+}
+
+/* División */
+.division {
+  grid-area: division;
+}
+
+/* Igual */
+.igual {
+  grid-area: igual;
+  background-color: tomato;
+  border-radius: 0 0 16px 0px;
+
+  &:hover {
+    background-color: #f79888;
+    cursor: pointer;
+    text-shadow: 1px 1px 10px white;
+  }
+}
+
+/* --------- NUMEROS -------- */
+.nº-0,
+.nº-1,
+.nº-2,
+.nº-3,
+.nº-4,
+.nº-5,
+.nº-6,
+.nº-7,
+.nº-8,
+.nº-9,
+.punto,
+.AC {
+  &:hover {
+    background-color: #a9a9a9;
+    cursor: pointer;
+    text-shadow: 1px 1px 10px white;
+  }
+}
+.nº-0 {
+  grid-area: nº-0;
+}
+.nº-1 {
+  grid-area: nº-1;
+}
+
+.nº-2 {
+  grid-area: nº-2;
+}
+
+.nº-3 {
+  grid-area: nº-3;
+}
+
+.nº-4 {
+  grid-area: nº-4;
+}
+
+.nº-5 {
+  grid-area: nº-5;
+}
+
+.nº-6 {
+  grid-area: nº-6;
+}
+
+.nº-7 {
+  grid-area: nº-7;
+}
+
+.nº-8 {
+  grid-area: nº-8;
+}
+
+.nº-9 {
+  grid-area: nº-9;
+}
+
+/* --------- PUNTO -------- */
+/* Punto */
+.punto {
+  grid-area: punto;
+}
+/* AC */
+.AC {
+  grid-area: AC;
+}
