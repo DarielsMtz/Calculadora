@@ -6,18 +6,21 @@
 /* *** ESTILOS GENERALES *** */
 /* *********************************** */
 
-/* Tipografía */
+/* --------- Tipografias ------------- */
 @font-face {
   font-family: "Calculator";
   src: url("../font/calculator.woff2") format("woff2"),
     url("../font/calculator.woff") format("woff");
 }
 
+/* -------- Estilos generales --------- */
 html {
   font-family: "Calculator", sans-serif;
-  font-size: 16px;
+  font-size: 24px;
+  font-weight: 500;
 }
 
+/* ------ Cuerpo de la pagina --------- */
 body {
   display: flex;
   justify-content: center;
@@ -35,7 +38,9 @@ body {
   min-height: 250px;
   text-align: center;
   user-select: none;
+  border-radius: 16px;
 
+  /* Diseño de estructura */
   display: grid;
   grid-template-columns: repeat(4, 1.2fr);
   grid-template-rows: repeat(6, 1.2fr);
@@ -49,31 +54,32 @@ body {
     "nº-1 nº-2 nº-3 igual"
     "nº-0 punto AC igual";
 
+  /* Efecto del fondo */
   background: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 
-  > div {
+  /* Seleccion de los elementos 'div' */
+  > div:not(.resultado) {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 }
 
-/* ------- RESULTAD --------- */
+/* ------- RESULTADO --------- */
 .resultado {
   grid-area: resultado;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px;
   background-color: black;
   color: white;
-  justify-content: flex-end !important;
   border-radius: 16px 16px 0 0;
-
-  > p {
-    padding: 0 10px;
-    font-size: 2.5rem;
-  }
+  font-size: 35px;
 }
 
 /* ------- ACCIONES --------- */
@@ -144,6 +150,7 @@ body {
 }
 .nº-0 {
   grid-area: nº-0;
+  border-radius: 0 0 0 16px;
 }
 .nº-1 {
   grid-area: nº-1;

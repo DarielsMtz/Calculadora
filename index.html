@@ -3,61 +3,35 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- SEO = Básico -->
-    <!-- Cada página del sitio tiene que ser diferente el título y la descripción -->
-    <title></title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <!-- Etiquetas Open Graph y Twitter Card, para crear el SEO de Redes Sociales -->
-    <meta property="og:title" content="Título de tu página" />
-    <meta property="og:description" content="Descripción de tu página" />
-    <meta
-      property="og:image"
-      content="URL de la imagen que quieres mostrar en las redes sociales" />
-    <meta property="og:url" content="URL de tu página" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Título de tu página" />
-    <meta name="twitter:description" content="Descripción de tu página" />
-    <meta
-      name="twitter:image"
-      content="URL de la imagen que quieres mostrar en Twitter" />
-    <!-- App Web, inidicar al navegador que elementos mostrar en un JSON -->
-    <link rel="manifest" href="site.webmanifest" />
-    <!-- icono de acceso para IOS -->
-    <link rel="apple-touch-icon" href="icon.png" />
-    <!-- Recordar que favicon.ico tiene que estar en el directorio inicial -->
-    <!-- links de estilos -->
+    <title>1º Practica / 2º DAW</title>
     <link rel="stylesheet" href="css/style.css" />
-    <!-- Se cambia el tema de algunos navegadores -->
-    <meta name="theme-color" content="#fafafa" />
-    <!-- Código de las plataformas de Análisis -->
-    <script></script>
-    <!-- Scripts a cargar antes de la renderización -->
-    <script src="preloader.js"></script>
   </head>
   <body>
-    <!-- Apartado del contenedor Principal -->
+    <!-- COntenedor de la calculadora -->
     <div class="calculadora">
-      <button id="" value="" class="resultado"><p>0</p></button>
-      <button id="" value="+" class="suma"><h2>+</h2></button>
-      <button id="" value="-" class="resta"><h2>-</h2></button>
-      <button id="" value="*" class="multi"><h2>x</h2></button>
-      <button id="" value="/" class="division"><h2>÷</h2></button>
-      <button id="" value="=" class="igual"><h2>=</h2></button>
-      <button id="" value="0" class="nº-0"><h2>0</h2></button>
-      <button id="" value="." class="punto"><h2>.</h2></button>
-      <button id="" value="AC" class="AC"><h2>AC</h2></button>
-      <button id="" value="1" class="nº-1"><h2>1</h2></button>
-      <button id="" value="2" class="nº-2"><h2>2</h2></button>
-      <button id="" value="3" class="nº-3"><h2>3</h2></button>
-      <button id="" value="4" class="nº-4"><h2>4</h2></button>
-      <button id="" value="5" class="nº-5"><h2>5</h2></button>
-      <button id="" value="6" class="nº-6"><h2>6</h2></button>
-      <button id="" value="7" class="nº-7"><h2>7</h2></button>
-      <button id="" value="8" class="nº-8"><h2>8</h2></button>
-      <button id="" value="9" class="nº-9"><h2>9</h2></button>
+      <!-- Apartado del campo de los resultados -->
+      <div id="resultado" class="resultado">0</div>
+      <!-- Apartado de las teclas de operacion -->
+      <div class="suma tecla">+</div>
+      <div class="resta tecla">-</div>
+      <div class="multi tecla">*</div>
+      <div class="division tecla">/</div>
+      <div class="igual tecla">=</div>
+      <div class="nº-0 tecla">0</div>
+      <div class="punto tecla">.</div>
+      <div class="AC tecla">AC</div>
+      <!-- Apartado de los números -->
+      <div class="nº-1 tecla">1</div>
+      <div class="nº-2 tecla">2</div>
+      <div class="nº-3 tecla">3</div>
+      <div class="nº-4 tecla">4</div>
+      <div class="nº-5 tecla">5</div>
+      <div class="nº-6 tecla">6</div>
+      <div class="nº-7 tecla">7</div>
+      <div class="nº-8 tecla">8</div>
+      <div class="nº-9 tecla">9</div>
     </div>
+
     <!-- Scripts a cargar después de la renderización -->
     <script src="js/main.js"></script>
   </body>
