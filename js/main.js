@@ -1,54 +1,52 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Llamamos a la salida por pantalla
   let salida = document.getElementById("resultado");
-  // Llamamos a los botones con la clase "boton"
   let botones = document.querySelectorAll(".tecla");
 
+  // Variable para controlar el último evento
   let ultimo_evento = "";
 
-  // Variable para controlar si se ha presionado "="
-  let igualPresionado = false;
+  // Lista de errores que se pueden producir
+  const lista_errores = [
+    "0",
+    "Error",
+    "Infinity",
+    "-Infinity",
+    "NaN",
+    "undefined",
+    "SintaxError",
+  ];
 
-  // Recorremos los botones y les añadimos un evento de click para que se ejecute lo que queremos
+  // Función para realizar la operación matemática
+  function calculate(operacion) {
+    try {
+      return eval(operacion);
+    } catch (error) {
+      return error.name;
+    }
+  }
+
+  // Evento click para cada botón
   botones.forEach((boton) => {
     boton.addEventListener("click", function () {
       let boton_clickado = boton.textContent;
 
-      // Si el botón clickado es "AC" borramos la salida y escribimos "0"
+      // Si se pulsa el botón =, se realiza la operación
+      if (boton_clickado === "=") {
+        salida.textContent = calculate(salida.textContent);
+        ultimo_evento = "Igual";
+        return;
+      }
+
+      // Si se pulsa el botón AC, se borra todo
       if (boton_clickado === "AC") {
         salida.textContent = "0";
-        igualPresionado = false;
         return;
       }
 
-      // Si el botón clickado es "=" y no se ha presionado previamente "=", evaluamos la operación
-      if (boton_clickado === "=" && !igualPresionado) {
-        try {
-          salida.textContent = eval(salida.textContent);
-          ultimo_evento = "Igual";
-          igualPresionado = true;
-        } catch {
-          // Si hay un error en la operación matemática, mostramos un mensaje de error
-          salida.textContent = "SintaxError";
-        }
-        return;
-      }
-
-      // Si el botón clickado es "AC" borramos el último número o operador
-      if (
-        salida.textContent === "0" ||
-        salida.textContent === "Error" ||
-        salida.textContent === "Infinity" ||
-        salida.textContent === "-Infinity" ||
-        salida.textContent === "NaN" ||
-        salida.textContent === "undefined" ||
-        salida.textContent === "SintaxError" ||
-        igualPresionado
-      ) {
+      if (lista_errores.includes(salida.textContent)) {
         salida.textContent = boton_clickado;
-        igualPresionado = false;
       } else {
-        // Si no, añadimos el texto del botón clickado a la salida
+        // Si se pulsa un número o un operador, se añade al resultado
         if (ultimo_evento === "Igual") {
           salida.textContent = boton_clickado;
           ultimo_evento = "";
