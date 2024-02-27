@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Lista de errores que se pueden producir
   const lista_errores = [
-    "0",
     "Error",
     "Infinity",
     "-Infinity",
@@ -45,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (lista_errores.includes(resultado.textContent)) {
       resultado.textContent = btn_clickeado;
     } else {
+      // En caso de que el último evento sea el botón igual
       if (evento_final === "Igual") {
         resultado.textContent = btn_clickeado;
         evento_final = "";

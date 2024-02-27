@@ -60,7 +60,7 @@ body {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 
-  /* Seleccion de los elementos 'div' */
+  /* Seleccion de los elementos 'div o botones' */
   > div:not(.resultado) {
     display: flex;
     justify-content: center;
