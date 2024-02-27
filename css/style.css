@@ -16,8 +16,8 @@
 /* -------- Estilos generales --------- */
 html {
   font-family: "Calculator", sans-serif;
-  font-size: 24px;
-  font-weight: 500;
+  font-size: 32px;
+  font-weight: 550;
 }
 
 /* ------ Cuerpo de la pagina --------- */
@@ -45,7 +45,6 @@ body {
   grid-template-columns: repeat(4, 1.2fr);
   grid-template-rows: repeat(6, 1.2fr);
   grid-auto-flow: row;
-  /* gap: 1px; */
   grid-template-areas:
     "resultado resultado resultado resultado"
     "suma resta multi division"
